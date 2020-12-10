@@ -6,32 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AleC Games - Immersive, Endless, Relaxing Games</title>
 	
-	<meta name="keywords" content="videogames, games, puzzle, puzzle games, relaxing, challenging, minimalistic, indie games, intelligent, smart, brain, maths, logic, logical">
-	<meta name="description" content="AleC Games is a small independent game studio focused in create relaxing, minimalist puzzle games with simple mechanics to sharpen your mind."/>
-  
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <meta name="keywords" content="videogames, games, puzzle, puzzle games, relaxing, challenging, minimalistic, indie games, intelligent, smart, brain, maths, logic, logical">
+    <meta name="description" content="AleC Games is a small independent game studio focused in create relaxing, minimalist puzzle games with simple mechanics to sharpen your mind."/>
     
-	<link rel="shortcut icon" href="assets/img/favicon.png">
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'G-6X3HH7T16S', 'auto');
+      ga('send', 'pageview');
+      </script>
+      <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+      
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    
+    <link type="text/css" rel="stylesheet" media="all" href="assets/css/normalize_min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 	
-	<link type="text/css" rel="stylesheet" media="all" href="assets/css/normalize_min.css">
-	<link rel="stylesheet" href="assets/css/styles.css">
-	
-	<script>
-		// aqui va el codigo de google analytics para este sitio para monitorearlo
-	</script>
+    <script type="text/javascript">
+    
+      function ready(fn) {
+        if (document.readyState != 'loading'){
+          fn();
+        } else {
+          document.addEventListener('DOMContentLoaded', fn);
+        }
+      }
+      ready( function(){
+        
+        // Se activa el menu de movil
+        function ocultarMenuMovil(){
+            document.getElementById("menu-boton").removeAttribute("class");
+            document.getElementById("menu-movil").removeAttribute("class");
+            //document.getElementById("contenedor").removeAttribute( "class" );
+        };
+        
+        document.getElementById("menu-boton").addEventListener("click", function(event){
+            
+            document.getElementById("menu-boton").setAttribute("class", "click");
+            document.getElementById("menu-movil").setAttribute("class", "activate");
+            
+            document.getElementById("capa-cubriente2").style.display = "block"; //muestro la capa cubriente2 para controlar el evento click fuera del menu movil
+        });
+        
+        document.getElementById("capa-cubriente2").addEventListener("click", function(event){ // para ocultar el menu movil y mostrar el menu boton
+            console.log("oculta capa-cubriente2");
+            ocultarMenuMovil();
+            document.getElementById("capa-cubriente2").style.display = "none"; // la oculto
+        });
+        
+      }); // end of initialize
+    </script>
+    
+    
 </head>
 
 <body>
 
 	<header>
-		<h2><a href="#"><img src="assets/img/logo.png" alt="Logo" ></a></h2>
+		<div id="logo-cabecera"><a href="#"><img src="assets/img/logo.png" alt="Logo" ></a></div>
 		<nav>
-			<li><a href="#">Home</a></li>
-			<li><a href="privacy-policy.html">Privacy Policy</a></li>
-			<li><a href="contact-us.html">Contact Us</a></li>
+      <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+      </ul>
+      
+      <!-- Menu que saldrá por debajo de 702px de ancho del viewport -->
+      <div id="contenedor-menus-movil">
+      
+        <div id="menu-boton" class="ja">Menú</div>
+          
+        <ul id="menu-movil">
+          <li><a href="#">Home</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+        
+      </div>
+      
+      <div id="capa-cubriente2"></div>
 		</nav>
+    
+    <div id="separa-para-menuboton"></div>
 	</header>
 
 	<section class="hero">
@@ -58,8 +120,10 @@
 			<div class="dr-flex-box">
 			
 				<div class="dr-flex-item">
-					<div class="dr-flex-item-content">
-						<div class="icon-wrapper">
+					
+          <div class="dr-flex-item-content">
+						
+            <div class="icon-wrapper">
 							<img src="assets/img/ARROW-512.png" alt="ARROW" >
 						</div>
 						<h2 class="title">ARROW</h2>
@@ -166,6 +230,28 @@
 						</div>
 					</div>
 				</div>
+        
+        <div class="dr-flex-item">
+					<div class="dr-flex-item-content">
+						<div class="icon-wrapper">
+							<img src="assets/img/Fill-the-Rainbow-512.png" alt="Fill the Rainbow">
+						</div>
+						<h2 class="title">Fill the Rainbow</h2>
+						
+						<div class="store">
+							<a href="https://play.google.com/store/apps/details?id=com.alecgames.filltherainbow.puzzle" target="_blank">
+								<img src="assets/img/google play.png" alt="Get it on Google Play" >
+							</a>
+							<a class="apple" href="https://play.google.com/store/apps/details?id=com.alecgames.filltherainbow.puzzle" target="_blank">
+								<img src="assets/img/app store.png" alt="Download on the App Store">
+							</a>
+						</div>
+						
+						<div class="desc">
+							
+						</div>
+					</div>
+				</div>
 				
 			</div>
 			
@@ -205,11 +291,13 @@
 			<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
 			<li><a href="#"><i class="fa fa-snapchat-square"></i></a></li>
 			<li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-			<li><a href="#"><i class="fa fa-github-square""></i></a></li>
+			<li><a href="#"><i class="fa fa-github-square"></i></a></li>
 		</ul>
 		<p>This site is under construction.</p>
 		
 	</footer>
+  
+  <div id="capa-cubriente"></div>
 
 </body>
 

@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /work/
+Sitemap: https://alecgames.github.io/sitemap.xml
